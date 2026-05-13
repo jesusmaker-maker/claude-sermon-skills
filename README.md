@@ -34,17 +34,68 @@
 
 ## ⚡ 빠른 설치
 
-### 사전 요건
+> **처음 컴퓨터에서 명령어를 다뤄 보시는 분도 따라 하실 수 있도록** 아주 천천히 적어 두었습니다. 이미 익숙하신 분은 [방법 1. 한 줄 설치](#방법-1-터미널-한-줄-설치--가장-쉬움-) 박스만 보고 진행하셔도 됩니다.
 
-- **Git** — 터미널에서 `git --version`으로 확인
-- **Bash** — macOS·Linux 기본 탑재
-- **Claude Code CLI** (방법 1·2 선택 시) — [공식 문서](https://docs.claude.com/claude-code) 참고
+### 🤷 어떤 방법을 골라야 할까요?
+
+| 이런 분이시라면 | 이 방법 |
+|---|---|
+| 컴퓨터에서 Claude를 자주 쓰시고, 명령어를 한 번 복사·붙여넣기 정도는 괜찮으신 분 | **방법 1. 한 줄 설치** (가장 추천 ⭐) |
+| 한 단계씩 직접 따라 하며 무엇이 일어나는지 보고 싶으신 분 | **방법 2. 단계별 설치** |
+| 컴퓨터 명령어가 부담스럽고 **claude.ai 사이트나 휴대폰 앱**에서 주로 쓰시는 분 | **방법 3. Claude.ai 웹/앱** |
+| 위 어느 것도 마음에 안 드는, 모든 걸 손으로 직접 하고 싶으신 분 | **방법 4. 수동 설치** |
+
+> 💡 **잘 모르겠으면 방법 1**을 고르세요. 가장 빠르고 가장 많은 분들이 쓰시는 방법입니다.
 
 ---
 
-### 방법 1. 터미널 한 줄 설치 (가장 빠름) ⭐
+### 🖥️ 시작 전에 — "터미널"이 처음이신 분께
 
-macOS·Linux 터미널을 열고 아래 한 줄을 붙여넣어 실행하세요. 클론 → 설치 → 검증이 한 번에 끝납니다.
+방법 1·2·3에서 등장하는 "터미널(terminal)"은 컴퓨터에게 글자로 명령을 내릴 수 있는 검은 창입니다. **마우스 클릭 대신 글자를 붙여넣고 엔터(Enter)를 누르는 것** 외에 다른 조작은 필요 없습니다.
+
+- **macOS** — `Command(⌘)` + `Space` 를 눌러 Spotlight 검색을 열고, **`터미널`** 또는 **`Terminal`** 이라고 입력해 엔터하세요. 검은 창이 하나 뜹니다.
+- **Windows** — 작업 표시줄 검색에 **`PowerShell`** 또는 **`Windows Terminal`** 이라고 입력해 엔터하세요. (Windows에서는 [WSL](https://learn.microsoft.com/windows/wsl/install)을 깔아 두시는 것을 권장합니다 — 그러면 macOS와 똑같은 방식으로 명령이 통합니다.)
+- **Linux** — 보통 `Ctrl + Alt + T`로 열립니다.
+
+검은 창이 떴다면 준비 끝입니다.
+
+---
+
+### ✅ 사전 요건 — 컴퓨터에 무엇이 있어야 하나요?
+
+설치 전에 아래 3가지가 컴퓨터에 깔려 있는지만 확인하시면 됩니다. 각 항목에 **"확인하는 한 줄"**을 적어 두었으니, 터미널에 그대로 복사해 엔터해 보세요.
+
+#### 1) **Git** — 인터넷에서 본 저장소를 받아오는 도구
+
+```bash
+git --version
+```
+
+엔터를 누르면 `git version 2.xx.x` 같은 글자가 나오면 OK입니다. **`command not found`** 가 뜨면 깔려 있지 않다는 뜻이니, macOS는 [Git 공식 사이트](https://git-scm.com/download/mac)에서, Windows는 [Git for Windows](https://git-scm.com/download/win)에서 받아 설치하세요. (한 번만 설치하면 평생 다시 안 깔아도 됩니다.)
+
+#### 2) **Bash** — 명령어를 해석해 주는 기본 프로그램
+
+macOS·Linux는 기본으로 깔려 있으므로 별도 확인이 필요 없습니다. Windows 사용자는 WSL을 깔거나 Git for Windows에 포함된 **Git Bash**를 쓰시면 됩니다.
+
+#### 3) **Claude Code** (방법 1·2를 쓰실 때만 필요)
+
+터미널에서 Claude를 띄우는 공식 도구입니다. 아래로 확인하실 수 있습니다.
+
+```bash
+claude --version
+```
+
+설치 안 되어 있으시다면 [Claude Code 공식 설치 안내](https://docs.claude.com/claude-code)를 따라 한 번 깔아 두세요. (Claude.ai 웹/앱만 쓰실 분은 이 항목은 건너뛰셔도 됩니다.)
+
+---
+
+### 방법 1. 터미널 한 줄 설치 — 가장 쉬움 ⭐
+
+**가장 추천하는 방법입니다.** 명령 한 줄을 복사·붙여넣고 엔터만 누르시면 GitHub에서 저장소 받기 → 스킬 설치 → 정상 설치 확인까지 한 번에 끝납니다.
+
+**1단계** — 위에서 연 터미널 창을 클릭해 활성화하세요.
+
+**2단계** — 아래 회색 박스 안의 내용을 **통째로 드래그해서 복사** 한 뒤(맥은 `⌘+C`, 윈도우/리눅스는 `Ctrl+C`), 터미널에 **붙여넣고** (맥은 `⌘+V`, 윈도우/리눅스는 `Ctrl+V`) **엔터** 를 누르세요.
 
 ```bash
 git clone https://github.com/idoforgod/cys-claude-sermon-skills.git ~/cys-claude-sermon-skills \
@@ -53,61 +104,106 @@ git clone https://github.com/idoforgod/cys-claude-sermon-skills.git ~/cys-claude
   && bash scripts/verify.sh
 ```
 
-설치 완료 후 **Claude Code를 재시작**하면 21개 sermon skill이 활성화됩니다. 기본 설치 위치는 `~/.claude/skills/`이며, 본 저장소의 각 스킬 폴더로 심볼릭 링크가 만들어집니다. 신규 스킬이 추가되어도 `install.sh`가 `skills/sermon-*/` 폴더를 동적으로 인식하므로, 위 한 줄을 다시 실행하기만 하면 추가 스킬까지 자동 반영됩니다.
+**3단계** — 글자들이 주르륵 흐르다가 마지막에 아래와 비슷한 메시지가 보이면 성공입니다.
 
-> 💡 **이미 클론한 저장소가 있다면** — 해당 폴더로 이동한 뒤 `bash scripts/install.sh && bash scripts/verify.sh`만 실행하시면 됩니다.
+```
+검사한 스킬:    21 / 21
+✓ 통과:        21
+✓ 모든 스킬이 정상 설치되어 있습니다.
+```
+
+**4단계** — **Claude Code를 한 번 껐다 켜시면** 21개 sermon 스킬이 모두 활성화되어 바로 쓰실 수 있습니다.
+
+#### 위 한 줄이 하는 일 (이해를 돕기 위해)
+
+- `git clone ...` — GitHub에서 본 저장소 전체를 **홈 폴더 아래 `cys-claude-sermon-skills`** 라는 폴더에 받아옵니다. 홈 폴더(`~`)는 macOS에서는 `/Users/사용자이름/`, Linux는 `/home/사용자이름/`, Windows WSL은 `/home/사용자이름/`을 가리킵니다.
+- `cd ~/cys-claude-sermon-skills` — 방금 받은 폴더로 들어갑니다.
+- `bash scripts/install.sh` — `~/.claude/skills/` 자리에 21개 스킬 폴더 바로가기(심볼릭 링크)를 만들어 줍니다. **원본 파일은 저장소 폴더에 그대로 남아 있고**, Claude Code는 그 바로가기를 따라가 스킬을 읽습니다.
+- `bash scripts/verify.sh` — 21개가 모두 잘 설치됐는지 자동으로 점검합니다.
+
+> 💡 **새로운 스킬이 추가됐을 때 어떻게 받나요?** — 본 README의 [업데이트 방법](#-이미-설치하신-분들--신규-스킬-업데이트-방법) 절을 참고하세요.
 
 ---
 
-### 방법 2. 단계별 설치 (CLI)
+### 방법 2. 단계별 설치 — 한 줄씩 직접 실행
 
-원하는 위치에서 직접 한 단계씩 실행하실 수도 있습니다.
+방법 1과 결과는 동일합니다. 한 단계씩 무엇이 일어나는지 직접 확인하며 진행하고 싶으신 분께 권장합니다. 아래 명령들을 **한 줄씩 차례로** 복사·붙여넣어 엔터하세요.
 
 ```bash
-# 1. 저장소 클론
+# 1단계: GitHub에서 저장소 받아오기 (현재 폴더 아래에 cys-claude-sermon-skills 폴더가 생깁니다)
 git clone https://github.com/idoforgod/cys-claude-sermon-skills.git
+
+# 2단계: 받은 폴더로 들어가기
 cd cys-claude-sermon-skills
 
-# 2. ~/.claude/skills/ 에 심볼릭 링크
+# 3단계: ~/.claude/skills/ 에 21개 스킬 바로가기를 만들기
 bash scripts/install.sh
 
-# 3. 설치 확인 (sermon-* 스킬 frontmatter·구조 점검)
+# 4단계: 잘 설치됐는지 자동 점검
 bash scripts/verify.sh
 ```
 
-설치 옵션:
+마지막에 `✓ 모든 스킬이 정상 설치되어 있습니다.` 가 보이면 성공입니다.
 
-| 명령어 | 설명 |
+#### 설치 옵션 — 특수한 상황에서만 쓰세요
+
+대부분의 분들은 그냥 `bash scripts/install.sh`만 쓰시면 됩니다. 아래 옵션은 **필요한 경우만** 사용하세요.
+
+| 명령어 | 언제 쓰나요? |
 |---|---|
-| `bash scripts/install.sh` | 기본 — `~/.claude/skills/`에 심볼릭 링크 |
-| `bash scripts/install.sh --copy` | 심볼릭 링크 대신 파일 복사 |
-| `bash scripts/install.sh --target ./.claude/skills` | 프로젝트 로컬에 설치 |
-| `bash scripts/install.sh --force` | 동일명 스킬 덮어쓰기 |
-| `bash scripts/uninstall.sh` | 설치된 sermon 스킬 제거 |
+| `bash scripts/install.sh` | **기본** — `~/.claude/skills/`에 바로가기(심볼릭 링크) 형태로 설치. 99%의 분께 권장. |
+| `bash scripts/install.sh --copy` | 바로가기 대신 **파일 복사**. 회사·학교 등 보안 정책 때문에 바로가기가 막혀 있을 때만. |
+| `bash scripts/install.sh --target ./.claude/skills` | 컴퓨터 전체가 아닌 **특정 프로젝트 폴더 안에만** 설치. 보통은 필요 없습니다. |
+| `bash scripts/install.sh --force` | 이미 같은 이름의 스킬이 있을 때 **덮어쓰기**. 업데이트 받을 때 자주 씁니다. |
+| `bash scripts/uninstall.sh` | 설치된 sermon 스킬을 **모두 제거**. 깔끔히 지우고 싶을 때. |
 
 ---
 
-### 방법 3. Claude.ai 웹/앱 사용자
+### 방법 3. Claude.ai 웹/앱 사용자 — 명령어 없이 설치
 
-Claude.ai 인터페이스에서는 스킬을 **개별 업로드** 또는 **프로젝트(Projects) 첨부**로 사용합니다.
+[claude.ai](https://claude.ai) 웹사이트나 모바일 앱에서만 Claude를 쓰시는 분 — 컴퓨터 명령어를 다루지 않아도 됩니다. ZIP 파일을 다운로드해 업로드하는 방식으로 사용하시면 됩니다.
+
+#### 만약 컴퓨터 터미널을 한 번이라도 쓸 수 있으시다면
+
+ZIP 파일을 자동으로 만들어 주는 명령이 있습니다.
 
 ```bash
-# 개별 스킬을 ZIP으로 패키징
+# 저장소를 먼저 받으세요 (방법 1·2 참고)
+cd ~/cys-claude-sermon-skills
 bash scripts/package.sh
-
-# → dist/ 폴더에 sermon-*.zip 21개와 cys-claude-sermon-skills-all.zip 1개 생성
 ```
 
-생성된 ZIP 파일을 Claude.ai의 [프로젝트(Projects)](https://claude.ai/projects)에 업로드하거나, 대화창에 직접 첨부하시면 됩니다. 자세한 단계는 [`docs/INSTALLATION.md`](./docs/INSTALLATION.md)를 참고하세요.
+실행하면 `dist/` 폴더에 **개별 스킬 ZIP 21개**(`sermon-*.zip`)와 **전체 묶음 1개**(`cys-claude-sermon-skills-all.zip`)가 생깁니다. 이 ZIP을 Claude.ai에 업로드하시면 됩니다.
+
+#### 터미널을 안 쓰시는 분 — 직접 다운로드
+
+1. 본 GitHub 저장소 페이지(<https://github.com/idoforgod/cys-claude-sermon-skills>)에 접속하세요.
+2. 우측 상단의 초록색 **`Code`** 버튼을 누르고 **`Download ZIP`** 을 누르세요.
+3. 다운로드된 ZIP 파일을 두 번 클릭해 압축을 푸세요.
+4. 압축을 푼 폴더 안의 **`skills/`** 폴더에 21개의 `sermon-*` 폴더가 들어 있습니다. 각 폴더를 ZIP으로 다시 묶거나, `skills/` 폴더 자체를 Claude.ai에 업로드하시면 됩니다.
+
+#### Claude.ai에 업로드하는 자리
+
+- [claude.ai/projects](https://claude.ai/projects) 에서 **새 Project(프로젝트)** 를 만든 뒤 **`Add Files`** 에 ZIP을 끌어 놓으세요. 해당 Project에서 대화할 때마다 21개 스킬이 자동으로 활성화됩니다.
+- 또는 일회성으로 쓰시려면 일반 대화창에 **종이 클립 모양 아이콘** 으로 ZIP을 첨부해도 됩니다.
+
+> 💡 **모바일에서 쓰실 분** — claude.ai 웹에서 한 번 Project에 업로드해 두면, 모바일 앱에서 같은 계정으로 로그인할 때 자동으로 동기화되어 그대로 쓰실 수 있습니다.
+
+더 자세한 단계는 [`docs/INSTALLATION.md`](./docs/INSTALLATION.md)에 사진과 함께 정리되어 있습니다.
 
 ---
 
-### 방법 4. 수동 설치
+### 방법 4. 수동 설치 — 모든 걸 직접 하고 싶으신 분
 
-스크립트 없이 직접 복사하셔도 됩니다. 각 `skills/sermon-*` 폴더를 다음 위치 중 하나로 복사하시면 됩니다.
+스크립트도 안 쓰고 직접 폴더를 옮겨 설치하는 방법입니다. **고급 사용자용이라 일반적으로는 권장하지 않습니다.**
 
-- 사용자 전역: `~/.claude/skills/`
-- 프로젝트 로컬: `<프로젝트 루트>/.claude/skills/`
+1. 본 저장소를 어떤 방식으로든 컴퓨터로 받습니다 (`git clone` 또는 `Download ZIP`).
+2. 받은 폴더 안의 `skills/sermon-*` 폴더들을 아래 두 위치 중 한 곳에 **그대로 복사** 하세요.
+   - **사용자 전역(권장)** — `~/.claude/skills/`
+     - 이 위치에 둔 스킬은 Claude Code의 모든 대화에서 자동 활성화됩니다.
+   - **프로젝트 로컬** — `<특정 프로젝트 루트>/.claude/skills/`
+     - 이 위치에 둔 스킬은 해당 프로젝트 안에서만 활성화됩니다.
+3. Claude Code를 한 번 껐다 켜시면 스킬이 인식됩니다.
 
 ---
 
