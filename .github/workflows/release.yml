@@ -41,7 +41,7 @@ jobs:
             echo ""
             echo "### 다운로드"
             echo ""
-            echo "- **cys-claude-sermon-skills-${{ env.VERSION }}-all.zip** — 20개 skill 전체 묶음 (권장)"
+            echo "- **cys-claude-sermon-skills-${{ env.VERSION }}-all.zip** — 21개 skill 전체 묶음 (권장)"
             echo "- **개별 skill ZIP** — 필요한 skill만 골라서 사용"
             echo ""
             echo "### 설치"

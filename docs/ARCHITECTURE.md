@@ -1,6 +1,6 @@
 # 아키텍처 — 스킬 간 관계도
 
-본 문서는 20개 sermon skill이 **어떤 영역을 분담**하고 **어떻게 서로 연결**되는지를 설명합니다.
+본 문서는 21개 sermon skill이 **어떤 영역을 분담**하고 **어떻게 서로 연결**되는지를 설명합니다.
 
 ---
 
@@ -44,6 +44,7 @@
    [배경 — 당시·오늘 무대는 어떠한가?]                            │
         │                                                      │
    sermon-history-culture-geo-context  (성경 시대)               │
+   sermon-bible-history-matcher        (성경 ↔ 세계사 매칭)     │
    sermon-christian-history-interpreter (성경 이후 역사)         │
    sermon-topic-research-multidisciplinary (현대 학제간)         │
         │                                                      │
@@ -111,13 +112,22 @@
 | 바빙크 | 은혜는 자연을 회복·완성, 유기적 사고 |
 | 로이드 존스 | Logic on Fire, 실존적 진단-답변, 성령 의존 |
 
-### 3️⃣ 배경 & 컨텍스트 (3) — 시간축 분담
+### 3️⃣ 배경 & 컨텍스트 (4) — 시간축 분담
 
 ```
-[성경 시대]                    [성경 이후~현재]                [현대 한국]
-history-culture-geo-context  →  christian-history-interpreter  →  topic-research-multidisciplinary
-(BC ~ AD 1세기)                (AD 2세기 ~ 현재)                 (현재의 사회·기술·심리·영성)
+[성경 시대]                    [성경 ↔ 세계사 매칭]              [성경 이후~현재]                [현대 한국]
+history-culture-geo-context  →  bible-history-matcher          →  christian-history-interpreter  →  topic-research-multidisciplinary
+(BC ~ AD 1세기, 무대 재구성)   (성경 인물·사건의 외부 증거)        (AD 2세기 ~ 현재)                 (현재의 사회·기술·심리·영성)
 ```
+
+각 스킬의 **고유 역할**:
+
+| 스킬 | 영역 | 차별점 |
+|---|---|---|
+| **history-culture-geo-context** | 성경 시대 *내부* 무대 재구성 | 정치·일상·관습·지리 (서사 무대) |
+| **bible-history-matcher** | 성경 인물·사건의 *외부* 증거 매칭 | 박물관 유물·고대 문헌·학술 컨센서스 (*증거 없으면 주장도 없다* 원칙) |
+| **christian-history-interpreter** | 성경 시대 *이후* 역사 해석 | 콘스탄티누스 ~ 한국 교회사를 기독교 시각으로 |
+| **topic-research-multidisciplinary** | 현대 *11분야* 학제간 자료 | 사회·기술·산업·경제·환경·정치·국제·법·제도·심리·영성 |
 
 ### 4️⃣ 설교문 작성 & 기획 (5) — 장르별
 
@@ -191,6 +201,7 @@ planner-52week (52주 키워드 기반 자동 생성)
 | "○○ 본문 사본 비교" | `textual-criticism` |
 | "○○ 본문 번역본 비교" | `multi-bible-version-compare` |
 | "헬라어 문법 ○강" | `greek-grammar-machen` |
+| "○○ 인물/사건의 역사적 증거" | `bible-history-matcher` |
 | "큐티 만들어줘" | `qt-original-text-based` |
 | "교리설교" | `doctrinal-planner` |
 | "○○○로 칼빈식 설교" | `calvin-style-insight` |
